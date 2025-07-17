@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Discussion of Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Infinite Discussion of Academy</h1>
+            <p>Komunitas Pengetahuan Tak Terbatas</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#home" class="nav-item active" data-page="home">Beranda</a>
+            <a href="#ebooks" class="nav-item" data-page="ebooks">E-Book</a>
+            <a href="#about" class="nav-item" data-page="about">Tentang</a>
+            <a href="#contact" class="nav-item" data-page="contact">Kontak</a>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <h2>Jelajahi Pengetahuan Tanpa Batas</h2>
+                    <p class="hero-tagline">Platform terbaik untuk menemukan dan berbagi pengetahuan.</p>
+                    <div class="search-bar">
+                        <input type="text" id="searchInputHome" placeholder="Cari e-book atau topik...">
+                        <button id="searchButtonHome">Cari</button>
+                    </div>
+                    <p class="hero-info">
+                        Selamat datang di Infinite Discussion of Academy. Kami menyediakan ribuan e-book dan sumber belajar
+                        dari berbagai disiplin ilmu untuk membantu Anda terus berkembang.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container section">
+                <h3>Apa yang Bisa Anda Temukan di Sini?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Koleksi E-Book Luas</h4>
+                        <p>Akses ribuan e-book dari berbagai kategori, mulai dari sains hingga seni.</p>
+                        <a href="#ebooks" class="read-more-btn" data-page="ebooks">Lihat E-Book</a>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Diskusi Interaktif</h4>
+                        <p>Bergabunglah dengan komunitas kami dan diskusikan topik menarik dengan para ahli.</p>
+                        <a href="#" class="read-more-btn">Gabung Komunitas</a>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Sumber Belajar Eksklusif</h4>
+                        <p>Dapatkan panduan, tutorial, dan materi pembelajaran eksklusif dari tim kami.</p>
+                        <a href="#" class="read-more-btn">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ebooks" class="page">
+            <div class="container section">
+                <h3>Koleksi E-Book Terbaru</h3>
+                <p class="section-description">Temukan berbagai e-book menarik dari berbagai disiplin ilmu.</p>
+                <div class="search-bar ebook-page-search">
+                    <input type="text" id="searchInputEbook" placeholder="Cari e-book atau topik...">
+                    <button id="searchButtonEbook">Cari</button>
+                </div>
+                <div class="ebook-grid" id="ebookList">
+                    <div class="ebook-card" data-title="Pengantar Pemrograman Python" data-category="Teknologi" data-author="Andi Wijaya">
+                        <img src="https://via.placeholder.com/150x200?text=Python" alt="Cover E-book Python">
+                        <h4>Pengantar Pemrograman Python</h4>
+                        <p class="author">Oleh: Andi Wijaya</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                    <div class="ebook-card" data-title="Dasar-Dasar Ekonomi Makro" data-category="Ekonomi" data-author="Budi Santoso">
+                        <img src="https://via.placeholder.com/150x200?text=Ekonomi" alt="Cover E-book Ekonomi">
+                        <h4>Dasar-Dasar Ekonomi Makro</h4>
+                        <p class="author">Oleh: Budi Santoso</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                    <div class="ebook-card" data-title="Sejarah Singkat Dunia" data-category="Sejarah" data-author="Citra Dewi">
+                        <img src="https://via.placeholder.com/150x200?text=Sejarah" alt="Cover E-book Sejarah">
+                        <h4>Sejarah Singkat Dunia</h4>
+                        <p class="author">Oleh: Citra Dewi</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                    <div class="ebook-card" data-title="Panduan Desain Grafis" data-category="Desain" data-author="Doni Pratama">
+                        <img src="https://via.placeholder.com/150x200?text=Desain" alt="Cover E-book Desain Grafis">
+                        <h4>Panduan Desain Grafis</h4>
+                        <p class="author">Oleh: Doni Pratama</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                    <div class="ebook-card" data-title="Psikologi Perkembangan Anak" data-category="Psikologi" data-author="Eka Lestari">
+                        <img src="https://via.placeholder.com/150x200?text=Psikologi" alt="Cover E-book Psikologi">
+                        <h4>Psikologi Perkembangan Anak</h4>
+                        <p class="author">Oleh: Eka Lestari</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                    <div class="ebook-card" data-title="Seni Memasak Indonesia" data-category="Kuliner" data-author="Farah Amelia">
+                        <img src="https://via.placeholder.com/150x200?text=Kuliner" alt="Cover E-book Kuliner">
+                        <h4>Seni Memasak Indonesia</h4>
+                        <p class="author">Oleh: Farah Amelia</p>
+                        <button class="read-more-btn">Baca Lebih Lanjut</button>
+                    </div>
+                </div>
+                <p id="noResults" style="display: none; text-align: center; margin-top: 20px; color: #555;">Tidak ada e-book yang ditemukan.</p>
+            </div>
+        </section>
+
+        <section id="about" class="page">
+            <div class="container section">
+                <h3>Tentang Kami</h3>
+                <p class="section-description">Mengenal lebih dekat tim di balik Infinite Discussion of Academy dan ketentuan penggunaan situs ini.</p>
+
+                <div class="about-content">
+                    <div class="credits">
+                        <h4>Credits</h4>
+                        <ul>
+                            <li><strong>Website:</strong> Infinite Discussion of Academy</li>
+                            <li><strong>Tahun:</strong> &copy; 2025</li>
+                            <li><strong>Versi:</strong> 1.0</li>
+                        </ul>
+                        <p>Website ini dikembangkan oleh tim berikut:</p>
+
+                        <div class="team-member">
+                            <h5>Lead Developer: [Nama Lengkap]</h5>
+                            <p>Bertanggung jawab atas pengembangan teknis utama, struktur proyek, dan pengelolaan proses pengembangan.</p>
+                        </div>
+                        <div class="team-member">
+                            <h5>UI/UX Designer: [Nama Lengkap]</h5>
+                            <p>Merancang tampilan dan pengalaman pengguna dengan fokus pada kejelasan visual dan kenyamanan navigasi.</p>
+                        </div>
+                        <div class="team-member">
+                            <h5>Content Writer/Editor: [Nama Lengkap]</h5>
+                            <p>Menyusun dan mengelola konten agar sesuai dengan nilai dan tujuan website.</p>
+                        </div>
+                        <div class="team-member">
+                            <h5>Quality Assurance: [Nama Lengkap]</h5>
+                            <p>Memastikan kualitas akhir situs melalui proses pengujian dan evaluasi menyeluruh.</p>
+                        </div>
+                    </div>
+
+                    <hr class="separator">
+
+                    <div class="license">
+                        <h4>Lisensi</h4>
+                        <p>Seluruh konten dan komponen pada website ini dilindungi oleh hak cipta.</p>
+                        <p>Kecuali disebutkan lain secara eksplisit, semua teks, gambar, dan elemen desain adalah milik tim pengembang dan tidak boleh disalin, dimodifikasi, atau digunakan kembali tanpa izin tertulis.</p>
+                        <p>Segala bentuk penggunaan di luar kepentingan pribadi non-komersial dilarang tanpa persetujuan tertulis resmi dari pihak pengembang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <div class="container section">
+                <h3>Hubungi Kami</h3>
+                <p class="section-description">Silakan hubungi kami untuk pertanyaan, saran, atau kolaborasi.</p>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Anda:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Anda:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="read-more-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Infinite Discussion of Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

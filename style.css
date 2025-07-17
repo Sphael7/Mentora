@@ -1,0 +1,570 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Variabel Warna (Opsional tapi direkomendasikan untuk konsistensi) */
+:root {
+    --primary-color: #1a237e; /* Biru Gelap Utama */
+    --secondary-color: #3949ab; /* Biru Sedang */
+    --accent-color: #ff9800; /* Oranye untuk aksen */
+    --light-bg: #e8eaf6; /* Latar Belakang Terang */
+    --text-color: #333;
+    --light-text: #f8f8f8;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f8f8f8; /* Latar belakang lebih cerah */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Container untuk menjaga lebar konten */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Navigasi */
+nav {
+    background: var(--secondary-color);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+    color: var(--light-text);
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 5px 0; /* Tambahkan padding untuk area klik */
+    position: relative; /* Untuk garis bawah aktif */
+}
+
+.nav-item:hover {
+    color: var(--accent-color); /* Warna aksen saat hover */
+    transform: translateY(-2px);
+}
+
+/* Indikator halaman aktif */
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Sesuaikan posisi */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Content Wrapper untuk halaman-halaman yang akan di-toggle */
+.content-wrapper {
+    min-height: calc(100vh - 180px); /* Sesuaikan tinggi agar footer tetap di bawah */
+    padding-bottom: 50px; /* Ruang untuk footer */
+}
+
+/* Page sections (Home, E-books, About, Contact) */
+.page {
+    display: none; /* Default: Sembunyikan semua halaman */
+    animation: fadeIn 0.5s ease-out; /* Efek fade in saat muncul */
+}
+
+.page.active {
+    display: block; /* Tampilkan halaman yang aktif */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Hero Section (Khusus halaman index.html) */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(to right, var(--light-bg), #dbe2ef); /* Gradien lebih menarik */
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-tagline {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-info {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+.search-bar {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Jarak antar input dan tombol */
+}
+
+/* Modifikasi search-bar untuk halaman ebook.html agar tidak terlalu besar di atas */
+.ebook-page-search {
+    margin-top: 20px;
+    margin-bottom: 40px; /* Tambahkan sedikit jarak di bawahnya */
+}
+
+.search-bar input {
+    padding: 12px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px; /* Lebih bulat */
+    width: 400px; /* Lebih lebar */
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.4);
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 30px; /* Lebih bulat */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Section Umum */
+.section {
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Fitur Unggulan (untuk home) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* Ebook Grid */
+.ebook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+    gap: 30px; /* Jarak antar kartu */
+    margin-top: 30px;
+}
+
+.ebook-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Pastikan gambar tidak keluar dari sudut bulat */
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Menggunakan flexbox untuk tata letak konten di dalam kartu */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ebook-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.ebook-card img {
+    width: 100%;
+    height: 250px; /* Tinggi gambar cover yang konsisten */
+    object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.ebook-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin: 0 15px 5px;
+}
+
+.ebook-card .author {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.read-more-btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-top: auto; /* Dorong tombol ke bawah kartu */
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Untuk link pada tombol */
+    display: inline-block; /* Agar padding bekerja pada link */
+}
+
+.read-more-btn:hover {
+    background: #e68a00; /* Warna sedikit lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* --- About Section Specific Styles --- */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antar bagian credits dan license */
+    padding: 20px 0;
+}
+
+.about-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color); /* Garis bawah aksen */
+    padding-bottom: 10px;
+    display: inline-block; /* Agar garis bawah hanya sepanjang teks */
+}
+
+.about-content ul {
+    list-style: none; /* Hilangkan bullet point default */
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.about-content ul li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.about-content ul li strong {
+    color: var(--primary-color);
+    font-weight: 700; /* Lebih tebal untuk label */
+}
+
+.team-member {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 4px solid var(--secondary-color); /* Garis vertikal sebagai aksen */
+}
+
+.team-member h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 40px 0; /* Jarak atas dan bawah */
+}
+
+.license p {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 24px); /* Penuh lebar dikurangi padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.3);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Memungkinkan textarea diubah ukurannya secara vertikal */
+}
+
+.contact-form .read-more-btn {
+    width: auto; /* Mengatur lebar tombol agar tidak 100% */
+    display: block; /* Agar margin auto bekerja */
+    margin: 20px auto 0 auto; /* Tengah secara horizontal */
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+
+/* --- Responsiveness (Media Queries) --- */
+
+/* Untuk tablet dan layar kecil (lebar maks 992px) */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    .search-bar input {
+        width: 60%; /* Kurangi lebar input */
+    }
+    .ebook-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Sesuaikan ukuran kartu */
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .about-content h4 {
+        font-size: 1.6em;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Untuk ponsel (lebar maks 768px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    nav .nav-item {
+        display: block; /* Buat link navigasi tampil vertikal */
+        margin: 8px 0;
+        padding: 3px 0;
+    }
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h2 {
+        font-size: 2em;
+    }
+    .hero-tagline {
+        font-size: 1.1em;
+    }
+    .hero-info {
+        font-size: 0.95em;
+        margin-top: 20px;
+    }
+    .search-bar {
+        flex-direction: column; /* Input dan tombol bertumpuk */
+        align-items: center; /* Pusatkan item */
+    }
+    .search-bar input,
+    .search-bar button {
+        width: 85%; /* Lebarkan input dan tombol */
+        max-width: 350px;
+    }
+    .section {
+        margin: 30px auto;
+        padding: 20px;
+    }
+    .section h3 {
+        font-size: 1.8em;
+    }
+    .section-description {
+        font-size: 1em;
+    }
+    .ebook-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk ponsel */
+    }
+    .ebook-card img {
+        height: 200px; /* Sesuaikan tinggi gambar */
+    }
+    .about-content {
+        padding: 10px 0;
+        gap: 30px;
+    }
+    .about-content h4 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    .about-content ul li {
+        font-size: 1em;
+    }
+    .team-member h5 {
+        font-size: 1.2em;
+    }
+    .team-member p, .license p {
+        font-size: 0.95em;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: calc(100% - 20px); /* Kurangi padding karena container lebih kecil */
+    }
+}
+
+/* Tambahan untuk layar yang sangat kecil (opsional) */
+@media (max-width: 480px) {
+    .search-bar input,
+    .search-bar button {
+        width: 95%; /* Hampir memenuhi lebar layar */
+    }
+}
